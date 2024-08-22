@@ -57,6 +57,26 @@ input[type="text"] {{
     color: #666 !important;
     opacity: 1 !important;
 }}
+
+/* Center the Generate button and set the color to blue */
+div.stButton > button {{
+    display: block;
+    margin: 0 auto;
+    background-color: #5271ff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove borders */
+    padding: 10px 24px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get it to display as a block */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 4px; /* Rounded corners */
+}}
+
+div.stButton > button:hover {{
+    background-color: #4056d9; /* Darker blue on hover */
+}}
 </style>
 """
 
