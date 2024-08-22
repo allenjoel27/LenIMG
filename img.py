@@ -72,19 +72,10 @@ div.stButton > button {{
     font-size: 16px; /* Increase font size */
     cursor: pointer; /* Pointer/hand icon */
     border-radius: 4px; /* Rounded corners */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 20px; /* Adjust as needed */
 }}
 
 div.stButton > button:hover {{
     background-color: #4056d9; /* Darker blue on hover */
-}}
-
-.stSpinner {{
-    text-align: center;
-    margin-top: 20px;
 }}
 </style>
 """
@@ -101,7 +92,7 @@ def query(payload):
 prompt = st.text_input("Hey, Welcome to LenIMG! Input your prompt to generate an image")
 
 if st.button("Generate"):
-    with st.spinner('Generating image...'):
+    with st.spinner('Generating your image...'):
         image_bytes = query({"inputs": prompt})
         image = Image.open(io.BytesIO(image_bytes))
         st.image(image)
