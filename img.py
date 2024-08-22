@@ -10,7 +10,7 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 
 # Use raw string to avoid unicode escape error
-img = get_img_as_base64(r"C:\Users\VasanthaKumar\Documents\Ai app\LenIMG bg.png")
+img = get_img_as_base64(r"https://github.com/allenjoel27/LenIMG/blob/main/LenIMG%20bg.png")
 
 page_bg_img = f"""
 <style>
