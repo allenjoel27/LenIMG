@@ -11,7 +11,7 @@ def get_img_as_base64(file):
 
 # Use raw string to avoid unicode escape error
 desktop_img = get_img_as_base64(r"LenIMG bg.png")
-mobile_img = get_img_as_base64(r"LenIMG bg_mobile.png")
+mobile_img = get_img_as_base64(r"LenIMG bg_app.png")
 
 page_bg_img = f"""
 <style>
