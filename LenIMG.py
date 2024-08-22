@@ -3,6 +3,7 @@ import streamlit as st
 import base64
 import io
 from PIL import Image
+import time
 
 def get_img_as_base64(file):
     with open(file, "rb") as f:
@@ -60,15 +61,13 @@ input[type="text"] {{
 
 /* Center the Generate button and set the color to blue */
 div.stButton > button {{
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
     background-color: #5271ff; /* Blue background */
     color: white; /* White text */
     border: none; /* Remove borders */
     padding: 10px 24px; /* Some padding */
     text-align: center; /* Centered text */
     text-decoration: none; /* Remove underline */
-    display: inline-block; /* Get it to display as a block */
     font-size: 16px; /* Increase font size */
     cursor: pointer; /* Pointer/hand icon */
     border-radius: 4px; /* Rounded corners */
@@ -76,6 +75,14 @@ div.stButton > button {{
 
 div.stButton > button:hover {{
     background-color: #4056d9; /* Darker blue on hover */
+}}
+
+/* Style for loader text */
+#loader-text {{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #666;
 }}
 </style>
 """
@@ -92,7 +99,8 @@ def query(payload):
 prompt = st.text_input("Hey, Welcome to LenIMG! Input your prompt to generate an image")
 
 if st.button("Generate"):
-    with st.spinner('Generating your image...'):
+    with st.spinner('Your image is generating...'):
+        time.sleep(2)  # Simulating a delay for the loader to appear
         image_bytes = query({"inputs": prompt})
         image = Image.open(io.BytesIO(image_bytes))
         st.image(image)
